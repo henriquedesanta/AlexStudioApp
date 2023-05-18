@@ -1,26 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import LoginScreen from './components/Login/Login';
+import { StatusBar } from 'react-native';
 
-const Stack = createStackNavigator();
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes';
 
 export default function App() {
   return (
-      <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
-      </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+      <StatusBar backgroundColor={"green"} />
+      <Routes/>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
